@@ -16,13 +16,14 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 //4. Routing code
-app.get("/home", function (req, res) {
-    res.send("<h3>Hello! This is first project</h3>");
-});
+app.post("/create_item", (req, res) => {
+    console.log(req.body);
+    res.json("aadi:Welcome to the aadiclub: You joined aadiclub Successfully");
+})
 
-app.get("/men", function (req, res) {
-    res.send("<h3>Men's Shoes & Clothes</h3>");
-});
+app.get("/", function(req, res){
+    res.render("aadi_club")
+})
 
 const server = http.createServer(app);
 let PORT = 3000;
