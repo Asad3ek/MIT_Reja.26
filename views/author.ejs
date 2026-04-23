@@ -3,11 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Portifolio main.css-->
+    <link rel="stylesheet" href="/portifolio_main.css">
+    <!--font awesom-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+
     <title>PORTIFOLIO</title>
 </head>
 
 <body>
-    <div>Portifolyo</div>
+    <!--main frame-->
+    <div class="frame">
+        <div class="main_frame">
+            <div class="left_frame">
+                <!--Left user profile-->
+                <div class="left_profile">
+                    <div class="left_profile_image">
+                        <img src="images/profile.png" 
+                        width="156px" 
+                        height="142px" 
+                        alt="">
+                    </div>
+                    <div class="left_profile_name"><%=user.name%></div>
+                    <div class="left_profile_profession"><%=user.profession%></div>
+                    <div class="left_social_icons">
+                        <!--Facebook icon-->
+                        <a href="" class="link_href">
+                            <div class="icon">
+                                <i class="fa-brands fa-facebook-f" style="color: white;"></i>
+                            </div>
+                        </a>
+                        <!--Instagram icon-->
+                        <a href="" class="link_href">
+                            <div class="icon">
+                                <i class="fa-brands fa-instagram" style="color:  white;"></i>
+                            </div>
+                        </a>
+                        <!--Twitter icon-->
+                        <a href="" class="link_href">
+                            <div class="icon">
+                                <i class="fa-brands fa-twitter" style="color: white;"></i>                            </div>
+                        </a>
+                        <!--LinkedIn icon-->
+                        <a href="" class="link_href">
+                            <div class="icon">
+                                <i class="fa-brands fa-linkedin" style="color: white;"></i>
+                            </div>
+                        </a>
+                        <!--YouTube icon-->
+                        <a href="" class="link_href">
+                            <div class="icon">
+                                <i class="fa-brands fa-youtube" style="color: white;"></i>
+                            </div>
+                        </a>
+                        <!--Dribble icon-->
+                        <a href="" class="link_href">
+                            <div class="icon">
+                                <i class="fa-brands fa-dribbble" style="color: white;"></i>
+                            </div>
+                        </a>    
+                    </div>
+                </div>
+                <div class="marginer"></div>
+                <!--Left user about-->
+                <div class="left_userInfo">
+                    <!--Left user age-->
+                    <div class="age_contain">
+                        <div class="user_age">Age:</div>
+                        <div class="user_data"><%=user.age%></div>
+                    </div>
+                    <!--Left user residence-->
+                    <div class="residence_contain">
+                        <div class="user_residence">Residence:</div>
+                        <div class="user_data"><%=user.residence%></div>
+                    </div>
+                    <!--Left user freelance-->
+                    <div class="freelance_contain">
+                        <div class="user_freelance">Freelance:</div>
+                        <div class="user_data">Available</div>
+                    </div>
+                    <!--Left user address-->
+                    <div class="address_contain">
+                        <div class="user_address">Address: </div>
+                        <div class="user_data"><%=user.adress%></div>
+                    </div>
+                </div>
+                <div class="marginer"></div>
+                <!--Left user Languages-->
+                <div class="left_userLanguages">
+                    <!--Uzbek Languages-->
+                    <div class="language_text">Languages</div>
+                    <div class="language_list">
+                        <div class="language_name">Uzbek</div>
+                        <div class="percentage">100%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="Uzbek_line"></div>
+                        </div>
+                    </div>
+                    <!--English Languages-->
+                    <div class="language_list">
+                        <div class="language_name">English</div>
+                        <div class="percentage">80%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="English_line"></div>
+                        </div>
+                    </div>
+                    <!--English Languages-->
+                    <div class="language_list">
+                        <div class="language_name">Korean</div>
+                        <div class="percentage">60%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="Korean_line"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="marginer"></div>
+                <!--Left user Skills-->
+                <div class="left_userSkills">
+                    <div class="language_text">Skills</div>
+                    <!--HTML-->
+                    <div class="language_list">
+                        <div class="language_name">HTML</div>
+                        <div class="percentage">95%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="inner_line_1"></div>
+                        </div>
+                    </div>
+                    <!--CSS-->
+                    <div class="language_list">
+                        <div class="language_name">CSS</div>
+                        <div class="percentage">88%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="inner_line_2"></div>
+                        </div>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="language_list">
+                        <div class="language_name">JS</div>
+                        <div class="percentage">90%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="inner_line_3"></div>
+                        </div>
+                    </div>
+                    <!--PhP-->
+                    <div class="language_list">
+                        <div class="language_name">PhP</div>
+                        <div class="percentage">75%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="inner_line_4"></div>
+                        </div>
+                    </div>
+                    <!--WordPress-->
+                    <div class="language_list">
+                        <div class="language_name">WordPress</div>
+                        <div class="percentage">82%</div>
+                    </div>
+                    <!--Percentage lines-->
+                    <div class="line_contain">
+                        <div class="percentage_line">
+                            <div class="inner_line_5"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="marginer"></div>
+                <!--Left user Extra Skills-->
+                <div class="left_user_ExtraSkills">
+                    <div class="extraSkill_text">Extra Skills</div>
+                        <!--Extra Skills 1-->
+                        <div class="skill_contain">
+                            <div class="rectangle_icon">
+                                <div class="rectangle_1"></div>
+                                <div class="rectangle_2"></div> 
+                            </div>
+                            <div class="text_1">Bootstrap, Materialize</div>
+                        </div>
+                        <!--Extra Skills 2-->
+                        <div class="skill_contain">
+                            <div class="rectangle_icon">
+                                <div class="rectangle_1"></div>
+                                <div class="rectangle_2"></div> 
+                            </div>
+                            <div class="text_1">Stylus, Sass, Less</div>
+                        </div>
+                        <!--Extra Skills 3-->
+                        <div class="skill_contain">
+                            <div class="rectangle_icon">
+                                <div class="rectangle_1"></div>
+                                <div class="rectangle_2"></div> 
+                            </div>
+                            <div class="text_1">Gulp, WebPack, Grunt</div>
+                        </div> 
+                        <!--Extra Skills 4-->
+                        <div class="skill_contain">
+                            <div class="rectangle_icon">
+                                <div class="rectangle_1"></div>
+                                <div class="rectangle_2"></div> 
+                            </div>
+                            <div class="text_1">GIT Knowledge</div>
+                        </div>        
+                    </div>
+
+                <div class="marginer"></div>
+            </div>
+            <!--left frame end-->
+            <!--middle frame start-->
+            <div class="middle_frame">
+                <!--top middle main menu-->
+                <div class="main_menu">
+                    <div class="main_menu-info">
+                        <div class="work_place"><%=user.work_place%></div>
+                        <div class="lorem_ipsum"><%=user.about_me%></div>
+                        <button class="hireme_btn">HIRE ME</button>
+                    </div>
+                    <div class="main_img-contain">
+                        <img src="/author/images/Your Image 1.jpg" alt="">
+                    </div>
+                </div>
+                <!--middle middle main menu-->
+                <div class="my_service">
+                    <div class="service_header">My Services</div>
+                    <div class="service_title"><%=user.service_desc%></div>
+                </div>
+                <!--middle bottom main menu-->
+                <div class="design_page ">
+                    <div class="web contain ">
+                        <img class="icon_images" src="/author/menu_icon/laptop-code-solid-full copy.svg" alt="">
+                        <a href="">
+                            <div class="design_page-text">Web Development</div>
+                            <div class="design_page-desc">Blog, E-Commers</div>
+                        </a>
+                    </div>
+                    <div class="UI contain">
+                        <img class="icon_images" src="/author/menu_icon/laptop-solid-full.svg" alt="">
+                        <a href="">
+                            <div class="design_page-text">UI / UX Design</div>
+                            <div class="design_page-desc">Mobile App, Websayt Design</div>
+                        </a>
+                    </div>
+                    <div class="sound contain">
+                        <img class="icon_images" src="/author/menu_icon/microphone-solid-full.svg" alt="">
+                        <a href="">
+                            <div class="design_page-text">Sound Design</div>
+                            <div class="design_page-desc">Voice over, Beat Making</div>
+                        </a>
+                    </div>
+                    <div class="game contain">
+                        <img class="icon_images" src="/author/menu_icon/playstation-brands-solid-full.svg" alt="">
+                        <a href="">
+                            <div class="design_page-text">Game Design</div>
+                            <div class="design_page-desc">Character Design, Props & Objects</div>
+                        </a>
+                    </div>
+                    <div class="photograpy contain">
+                        <img class="icon_images" src="/author/menu_icon/camera-retro-solid-full.svg" alt="">
+                        <a href="">
+                            <div class="design_page-text">Photograpy</div>
+                            <div class="design_page-desc">Portirait, Product Photography</div>
+                        </a>
+                    </div>
+                    <div class="advertising contain">
+                        <a href="">
+                            <div class="design_page-text">Advertising</div>
+                            <div class="design_page-desc"><%=user.about_me%></div>
+                            <button class="btn_order">ORDER NOW <span><i class="fa-solid fa-angle-right fa-fade" style="color: rgb(255, 255, 255);"></i></span></button>
+                        </a>
+                    </div>
+                    
+                </div>
+
+            </div>
+             <!--middle frame end-->
+
+            <!--right frame start-->
+            <div class="right_frame">
+                <a href="" class="">
+                    <div class="menu_icon1">
+                        <img src="/author/menu_icon/menu_icon1.png" alt="">
+                    </div>
+                </a>
+                <!--right  pop up home-->
+                <div class="popUp_home">
+                    <div class="rectangle_3">
+                        <p class="home_text">Home</p>
+                    </div>
+                    <div class="polygon">
+                        <i class="fa-solid fa-play" style="color: black;"></i>
+                    </div>
+                </div>
+                <a href="">
+                    <div class="right_icon_home">
+                        <i class="fa-solid fa-house-user fa-beat"></i>
+                    </div>
+                </a>
+                <!--right service-->
+                <a href="">
+                    <div class="circle_icon">
+                        <i class="fa-solid fa-file-code"></i>
+                    </div>
+                </a>
+                <!--right CV-->
+                <a href="">
+                    <div class="circle_icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                </a>
+                <!--right Portifolyo-->
+                <a href="">
+                    <div class="circle_icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                </a>
+                <!--right Blog-->
+                <a href="">
+                    <div class="circle_icon">
+                        <i class="fa-solid fa-square"></i>
+                    </div>
+                </a>
+                <!--right Contact-->
+                <a href="">
+                    <div class="circle_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </a>
+
+            </div>
+            <!--right frame end-->
+        </div>
+    </div>
 </body>
 
 </html>

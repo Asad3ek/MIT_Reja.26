@@ -38,7 +38,7 @@ app.get("/", function(req, res){
 
 
 app.get("/author", function(req, res) {
-    res.render("author", {user: user});
+    res.render("author", { user });
 })
 
 const server = http.createServer(app);
