@@ -1,75 +1,29 @@
-
-//============================================
-
-console.log("Starting Web Project");
-
-const express = require("express");
-const app = express(); 
 const http = require("http");
-const fs = require("fs");
+const mongodb = require("mongodb");
+const { connect } = require("http2");
 
-let user; 
-fs.readFile("database/user.json", "utf8", (err, data) => {
-    if(err) {
-        console.log("ERROR:",err);
+let db;
+const connectionString = "mongodb+srv://anthony_mit:KWJEZeEWp0cDcOiQ@cluster0.mhqyxxk.mongodb.net/MIT_REJA";
+
+mongodb.connect(connectionString, {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+}, (err, client) => {
+    if(err){
+        console.log("ERROR: Connection problem on MongoDB")
     } else{
-        user = JSON.parse(data)
-    } 
-});
-
-//1. Kirish code 
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-
-//2. Session codes
-
-//3. Views code
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-//4. Routing code
-
-app.post("/create_item", (req, res) => {
-    console.log(req.body);
-    res.json("aadi:Welcome to the aadiclub: You joined aadiclub Successfully");
-})
-
-//====R====E====J====A====START====
-let goals = [];
-
-app.get("/", function(req, res) {
-    res.render("goals", {goals});
-})
-
-app.post("/create_item1", (req, res) => {
-    goals.push(req.body.goal);
-    res.redirect("/");
-})
-
-app.post("/delete/:id", (req, res) => {
-    const id = req.params.id;
-
-    goals.splice(id, 1);
-
-    res.redirect("/");
-});
-
-//====R====E====J====A====END====
-
-app.get("/aadi_club", function(req, res){
-    res.render("aadi_club")
-})
-
-
-app.get("/author", function(req, res) {
-    res.render("author", { user });
-})
-
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, () => {
-    console.log(
+        
+        console.log("Successfully connected to MongoDB")
+        module.exports = client;
+        const app = require("./app");
+        const server = http.createServer(app);
+        let PORT = 3000;
+        server.listen(PORT, () => {
+        console.log(
         `The Server is running  successfully on port: ${PORT}, http://localhost:${PORT}`
-    );
-}); 
+        );
+        }); 
+    }
+})
+
+
