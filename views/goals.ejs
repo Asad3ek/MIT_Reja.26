@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals List | 2026</title>
+    <!--Links-->
+    <link rel="stylesheet" href="goal_main.css">
+    <link rel="stylesheet" 
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+     crossorigin="anonymous">
+</head>
+
+<body style="background-color: #f6f6f6;">
+    <!--Main Container-->
+    <div class="main_container">
+        <div class="select_container">
+            <h1 class="main_title">Plans & Goals List</h1>
+            <select class="year-select">
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>2029</option>
+                <option>2030</option>
+            </select>
+        </div>
+        <div class="navbar">
+            <form action="/create_item1" method="post" class ="main_form">
+                <input class="input1" type="text" name="goal" placeholder="  Write your goal">
+                <button class="btn1" type="submit">+ Save to List</button>
+            </form>    
+        </div>
+        <ol class="list">
+            <% goals.forEach(function(goal, index) { %>
+                <li class="list_item">
+                    <span class="goal_name"><%= goal %></span>
+                    <form action="/delete/<%= goals %>" method="POST">
+                        <button type="submit" class="delete_btn2">Delete</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ol>
+        
+
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,6 @@
+
+//============================================
+
 console.log("Starting Web Project");
 
 const express = require("express");
@@ -32,7 +35,29 @@ app.post("/create_item", (req, res) => {
     res.json("aadi:Welcome to the aadiclub: You joined aadiclub Successfully");
 })
 
-app.get("/", function(req, res){
+//====R====E====J====A====START====
+let goals = [];
+
+app.get("/", function(req, res) {
+    res.render("goals", {goals});
+})
+
+app.post("/create_item1", (req, res) => {
+    goals.push(req.body.goal);
+    res.redirect("/");
+})
+
+app.post("/delete/:id", (req, res) => {
+    const id = req.params.id;
+
+    goals.splice(id, 1);
+
+    res.redirect("/");
+});
+
+//====R====E====J====A====END====
+
+app.get("/aadi_club", function(req, res){
     res.render("aadi_club")
 })
 
@@ -43,6 +68,8 @@ app.get("/author", function(req, res) {
 
 const server = http.createServer(app);
 let PORT = 3000;
-server.listen(PORT, function() {
-    console.log(`The Server is running  successfully on port: ${PORT}`);
+server.listen(PORT, () => {
+    console.log(
+        `The Server is running  successfully on port: ${PORT}, http://localhost:${PORT}`
+    );
 }); 

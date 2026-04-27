@@ -80,7 +80,7 @@ async function run() {
 }
 //run();
 
-//============M=====================I========================T=========================
+//============M=====================I========================T================TASK=========A====
 // MITASK-A 
 function countDigit(digit, number) {
     let count = 0;
@@ -106,3 +106,60 @@ function countLetter(letter, word) {
 }
  const result = countLetter("a","Mehanizatsiyalashtirilmaganligidanda");
  console.log("Result 2:", result);
+
+ function evenOrOdd(number){
+    if(number % 2 === 0){
+        console.log(`you inserted ${number} and it is even`);
+    } else {
+        console.log(`you inserted ${number} and it is odd`)
+        }
+    
+    }
+ evenOrOdd(7);
+
+ const bigReturn = (number1, number2) => {
+    if(number1 > number2) {
+        return number1;
+    } else {
+        return number2;
+    }
+ }
+
+ const result3 = bigReturn(2345, 2445);
+ console.log("Result3:", result3);
+
+//============M=====================I========================T================TASK=========B====
+function digitCounter(a) {
+    let count = 0;
+
+    for(let i = 0; i < a.length; i++) {
+        if(!isNaN(a[i])){
+            count++;
+        }
+    }
+    return count;
+}
+
+ const result4 = digitCounter('23r214r7ang548s2vh7nru8rg24a5hu6d7er6b4ek');
+ console.log('RESULT 4:', result4);
+
+//TASK B - 2
+function dividerNum(a) {
+    let result = "";
+
+    for(char of a) {
+        if(char >= "" && char <= "9"){
+            result += char;
+        }
+    }
+    return result;
+}
+
+ const result5 = digitCounter('23r214r7ang548s2vh7nru8rg24a5hu6d7er6b4ek');
+ console.log('RESULT 5:', result5);
+
+
+
+
+
+
