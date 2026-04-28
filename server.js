@@ -3,7 +3,7 @@ const mongodb = require("mongodb");
 const { connect } = require("http2");
 
 let db;
-const connectionString = "mongodb+srv://anthony_mit:KWJEZeEWp0cDcOiQ@cluster0.mhqyxxk.mongodb.net/MIT_REJA";
+const connectionString = "mongodb+srv://Anthony_MIT:3lBJRwcHWLsAC41R@cluster0.1shlfmo.mongodb.net/MIT_REJA";
 
 mongodb.connect(connectionString, {
     useNewUrlParser: true, 
@@ -15,6 +15,7 @@ mongodb.connect(connectionString, {
         
         console.log("Successfully connected to MongoDB")
         module.exports = client;
+
         const app = require("./app");
         const server = http.createServer(app);
         let PORT = 3000;

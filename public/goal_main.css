@@ -27,7 +27,7 @@
 }
 
 .navbar{
-    width: 1060px;
+    width: 1200px;
     height: 90px;
     background-color: midnightblue;
     display: flex;
@@ -46,7 +46,7 @@
 }
 
 .input1{
-    width: 800px;
+    width: 900px;
     height: 55px;
     background-color: aliceblue;
     border-radius: 5px;
@@ -68,7 +68,7 @@
 }
 
 .list{
-    width: 1070px;
+    width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -99,12 +99,30 @@
     align-self: center;
 }
 
+.inner_form{
+    display: flex;
+    flex-direction: row;
+
+}
+
 .delete_btn2{
     width: 150px;
     height: 46px;
     margin-left: 20px;
     border-radius: 25px;
     background-color: red;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.edit_btn3{
+    width: 150px;
+    height: 46px;
+    margin-left: 20px;
+    border-radius: 25px;
+    background-color: blue;
     color: white;
     border: none;
     font-size: 18px;

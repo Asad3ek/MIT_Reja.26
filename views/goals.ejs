@@ -29,7 +29,12 @@
         </div>
         <div class="navbar">
             <form action="/create_item1" method="post" class ="main_form">
-                <input class="input1" type="text" name="goal" placeholder="  Write your goal">
+                <input class="input1" 
+                type="text" 
+                autofocus
+                autocomplete="off"
+                name="MIT_REJA" 
+                placeholder="  Write your goal">
                 <button class="btn1" type="submit">+ Save to List</button>
             </form>    
         </div>
@@ -37,7 +42,8 @@
             <% goals.forEach(function(goal, index) { %>
                 <li class="list_item">
                     <span class="goal_name"><%= goal %></span>
-                    <form action="/delete/<%= goals %>" method="POST">
+                    <form class="inner_form" action="/delete/<%= goals %>" method="POST">
+                        <button type="submit" class="edit_btn3">Edit</button>
                         <button type="submit" class="delete_btn2">Delete</button>
                     </form>
                 </li>

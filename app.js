@@ -13,6 +13,10 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
     } 
 });
 
+//calling MongoDB
+const db = require("./server").db();
+
+
 //1. Kirish code 
 app.use(express.static("public"));
 app.use(express.json());
@@ -35,11 +39,30 @@ app.post("/create_item", (req, res) => {
 let goals = [];
 
 app.get("/", function(req, res) {
-    res.render("goals", {goals});
+    db.collection("2026_plans").find().toArray((err, data) => {
+        if(err){
+            console.log(err);
+            res.end("Something went wrong")
+        } else{
+            console.log(data);
+            res.render("goals", {goals});
+        }
+    })
+    
 })
 
 app.post("/create_item1", (req, res) => {
-    goals.push(req.body.goal);
+    goals.push(req.body.MIT_REJA);
+    console.log(req.body);
+    const new_reja = req.body.MIT_REJA;
+    db.collection("2026_plans").insertOne({reja: new_reja}, (err, data) => {
+        if(err){
+            console.log(err);
+            res.end("Something Went Wrong");
+        } else{
+            console.log("Data Successfully Added");
+        }
+    })
     res.redirect("/");
 })
 
