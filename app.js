@@ -1,4 +1,5 @@
 console.log("Starting Web Project");
+const mongodb = require("mongodb");
 
 const express = require("express");
 const app = express(); 
@@ -63,9 +64,17 @@ app.post("/create_item1", (req, res) => {
 app.post("/delete/:id", (req, res) => {
     const id = req.params.id;
 
-    goals.splice(id, 1);
-
-    res.redirect("/");
+    db.collection("2026_plans").deleteOne(
+        { _id: new mongodb.ObjectId(id) },
+        (err, data) => {
+            if (err) {
+                console.log(err);
+                res.end("Delete failed");
+            } else {
+                res.json({ success: true });
+            }
+        }
+    );
 });
 
 //====R====E====J====A====END====

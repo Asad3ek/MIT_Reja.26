@@ -6,11 +6,11 @@ function itemTemplate(goal) {
                     <div class="inner_form">
                         <button class="editMe_btn3" 
                                 data-id = "${goal._id}"
-                                type="submit" class="edit_btn3">Edit</button>
+                                type="button">Edit</button>
                         
                         <button class="deleteMe_btn2" 
                                 data-id = "${goal._id}"
-                                type="submit" class="delete_btn2">Delete</button>
+                                type="button">Delete</button>
                     </div>
                 </li>  `
 }
@@ -28,7 +28,22 @@ document.querySelector('.main_form').addEventListener('submit', function(e) {
         console.log('Please Try Again');
     })
     Input1.value = "";
-    Input1.focus; 
+    Input1.focus(); 
 })
+
+
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("deleteMe_btn2")) {
+        const id = e.target.getAttribute("data-id");
+
+        axios.post(`/delete/${id}`)
+            .then((response) => {
+                e.target.closest("li").remove();
+            })
+            .catch((err) => {
+                console.log("Delete error");
+            });
+    }
+});
 
 
