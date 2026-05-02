@@ -105,10 +105,10 @@
 
 }
 
-.delete_btn2{
+.deleteMe_btn2{
     width: 150px;
     height: 46px;
-    margin-left: 20px;
+    margin-left: 10px;
     border-radius: 25px;
     background-color: red;
     color: white;
@@ -117,7 +117,7 @@
     font-weight: bold;
 }
 
-.edit_btn3{
+.editMe_btn3{
     width: 150px;
     height: 46px;
     margin-left: 20px;

@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended: true}));
 //3. Views code
 app.set("views", "views");
 app.set("view engine", "ejs");
-
+ 
 //4. Routing code
 
 app.post("/create_item", (req, res) => {
@@ -45,25 +45,19 @@ app.get("/", function(req, res) {
             res.end("Something went wrong")
         } else{
             console.log(data);
-            res.render("goals", {goals});
+            res.render("goals", {goals: data});
         }
     })
     
 })
 
 app.post("/create_item1", (req, res) => {
-    goals.push(req.body.MIT_REJA);
-    console.log(req.body);
-    const new_reja = req.body.MIT_REJA;
-    db.collection("2026_plans").insertOne({reja: new_reja}, (err, data) => {
-        if(err){
-            console.log(err);
-            res.end("Something Went Wrong");
-        } else{
-            console.log("Data Successfully Added");
-        }
+    //goals.push(req.body.MIT_REJA);
+    const new_goal = req.body.MIT_REJA;
+    db.collection("2026_plans").insertOne({reja: new_goal}, (err, data) => {
+        console.log(data.ops);
+        res.json(data.ops[0]);
     })
-    res.redirect("/");
 })
 
 app.post("/delete/:id", (req, res) => {

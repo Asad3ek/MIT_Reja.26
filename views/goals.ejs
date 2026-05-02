@@ -39,19 +39,26 @@
             </form>    
         </div>
         <ol class="list">
-            <% goals.forEach(function(goal, index) { %>
+            <% goals.map(function(goal, index) { %>
                 <li class="list_item">
-                    <span class="goal_name"><%= goal %></span>
-                    <form class="inner_form" action="/delete/<%= goals %>" method="POST">
-                        <button type="submit" class="edit_btn3">Edit</button>
-                        <button type="submit" class="delete_btn2">Delete</button>
-                    </form>
-                </li>
+                    <span class="goal_name"><%= goal.reja%></span>
+                    <div class="inner_form">
+                        <button class="editMe_btn3" 
+                                data-id = "<%=goal._id%>"
+                                type="submit" class="edit_btn3">Edit</button>
+                        
+                        <button class="deleteMe_btn2" 
+                                data-id = "<%=goal._id%>"
+                                type="submit" class="delete_btn2">Delete</button>
+                    </div>
+                </li> 
             <% }) %>
         </ol>
         
 
     </div>
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
 </body>
 
 </html>
