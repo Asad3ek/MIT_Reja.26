@@ -2,7 +2,7 @@ console.log('Fronted ishga tushdi')
 
 function itemTemplate(goal) {
     return  `<li class="list_item">
-                    <span class="goal_name">${goal}</span>
+                    <span class="goal_name">${goal.reja}</span>
                     <div class="inner_form">
                         <button class="editMe_btn3" 
                                 data-id = "${goal._id}"
