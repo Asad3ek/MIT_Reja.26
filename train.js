@@ -1,6 +1,42 @@
+//============M=====================I========================T================TASK=========D====
+
+function contentChecker(a, b) {
+    const parametr1  = a.toLowerCase().split("").sort().join("")
+    const parametr2  = b.toLowerCase().split("").sort().join("")
+
+    if(parametr1 === parametr2) {
+        console.log("Harflar miqdori va turi teng")
+        return true;
+    }
+
+    if(parametr1.length !== parametr2.length && parametr1 !== parametr2) {
+        console.log("Ikkita paramaetr harflar miqdori teng emas")
+        return false;
+    } 
+
+}
+
+const result1 = contentChecker("mitgroup", "gmtiprou");
+console.log("NATIJA:", result1);
+
+const result2 = contentChecker("porschetycane", "porscheTycane");
+console.log("NATIJ2:", result2);
+
+
+// TASK D
+
+// Ikkita parametra ega function tuzing, va functioning berilgan birinchi va ikkinchi 
+// parametr qiymatlari o'zaro to'liq mos kelsa true qiymat qaytarsin.
+
+// Masalan: checkContent("mitgroup", "gmtiprou") return true
+
+
+
+
 
 //============M=====================I========================T================TASK=========C====
 // 1- usul 
+/*
 const moment = require("moment");
 
 class Market {
@@ -67,7 +103,7 @@ myMarket.currentStock1();
 myMarket.sellProduct1('Zubayr', 4)
 myMarket.receiveProduct1(4);
 
-
+*/
 
 //2 - usul 
 /*

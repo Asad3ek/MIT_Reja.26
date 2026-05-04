@@ -18,6 +18,7 @@ function itemTemplate(goal) {
 let Input1 = document.querySelector('.input1');
 
 document.querySelector('.main_form').addEventListener('submit', function(e) {
+    console.log("submit worked");
     e.preventDefault();
     const new_reja = Input1.value;
     axios.post('/create_item1', {MIT_REJA: new_reja})
@@ -32,8 +33,80 @@ document.querySelector('.main_form').addEventListener('submit', function(e) {
 })
 
 
+document.addEventListener('click', function (e) {
+//delete operation
+    if(e.target.classList.contains("deleteMe_btn2")) {
+        if(confirm ("Are you sure to remove this item from Goal list?")) {
+            axios.post("/delete_item1", 
+            {id: e.target.getAttribute("data-id") })
+            .then((response) => {
+                e.target.parentElement.parentElement.remove();
+            })
+            .catch((err) => {
+                console.log('Please Try Again');
+            })
+        }
+
+    }
+
+//edit operation 
+    if(e.target.classList.contains('editMe_btn3')) {
+        let userInput = prompt("Edit text", 
+        e.target.parentElement.parentElement.querySelector(".goal_name").innerHTML
+    );
+
+    if(userInput) {
+        axios.post("/edit_item1", 
+        {id: e.target.getAttribute("data-id"), new_input: userInput, })
+        .then((responce) => {
+            console.log(responce.data);
+            e.target.parentElement.parentElement.querySelector(".goal_name")
+            .innerHTML = userInput;
+
+    })
+        .catch((err) => {
+            console.log('Please Try Again');
+        })
+
+        }
+    }
+})
+
+//clear list operation 
+ document.querySelector(".clear_all5").addEventListener("click", function(e) {
+    axios.post("/delete-all1", {delete_all: true })
+    .then((responce) => {
+        document.querySelector(".list").innerHTML = "";
+        console.log(response.data.state);
+    })
+    .catch((err) => {
+        console.log("Delete all error");
+    })
+ })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 document.addEventListener("click", function(e) {
-    if (e.target.classList.contains("deleteMe_btn2")) {
+    if (e.target.classList.contains("deleteMe_btn2")) { 
         const id = e.target.getAttribute("data-id");
 
         axios.post(`/delete/${id}`)
@@ -45,5 +118,7 @@ document.addEventListener("click", function(e) {
             });
     }
 });
+
+*/
 
 

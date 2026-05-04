@@ -128,3 +128,31 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.clear_all-container{
+    display: flex;
+    justify-content:flex-start;
+    width: 1200px;
+}
+.clear_all5{
+    width: 200px;
+    height: 54px;
+    border-radius: 8px;
+    background-color: red;
+    color: aliceblue;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
+.clear_all5:hover{
+    background-color: black;
+    color: aliceblue;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border: 2px solid red;
+}
