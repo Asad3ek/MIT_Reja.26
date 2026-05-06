@@ -1,5 +1,32 @@
-//============M=====================I========================T================TASK=========D====
+//============M=====================I========================T================TASK=========E====
 
+function wordReverse(word) {
+    console.log("Original Text:", word);
+    console.log("=======================================")
+    const reversedWord = word.split("").reverse().join("");
+        return reversedWord;
+    }
+
+//Test 1
+const result1 =  wordReverse ("Massachusset_Institute_of_Technology");
+console.log("RESULT_1:", result1);
+console.log("=======================================")
+
+//test 2
+const result2 =  wordReverse ("Mehanizatsiyalashtirilmaganligidandir");
+console.log("RESULT_2:", result2);
+
+/*
+TASK E
+
+Shunday function tuzing, u bitta string argumentini qabul qilib, qabul qilingan stringni teskari ko'rinishda return qilsin.
+
+Masalan: getReverse("hello") return "olleh"
+*/
+
+
+//============M=====================I========================T================TASK=========D====
+/*
 function contentChecker(a, b) {
     const parametr1  = a.toLowerCase().split("").sort().join("")
     const parametr2  = b.toLowerCase().split("").sort().join("")
@@ -30,7 +57,7 @@ console.log("NATIJ2:", result2);
 
 // Masalan: checkContent("mitgroup", "gmtiprou") return true
 
-
+*/
 
 
 
