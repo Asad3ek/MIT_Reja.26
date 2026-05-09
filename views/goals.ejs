@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Goals List | 2026</title>
     <!--Links-->
     <link rel="stylesheet" href="goal_main.css">
-    <link rel="stylesheet" 
-     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-     crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body style="background-color: #f6f6f6;">
@@ -28,38 +27,32 @@
             </select>
         </div>
         <div class="navbar">
-            <form action="/create_item1" method="post" class ="main_form">
-                <input class="input1" 
-                type="text" 
-                autofocus
-                autocomplete="off"
-                name="MIT_REJA" 
-                placeholder="  Write your goal">
+            <form action="/create_item1" method="post" class="main_form">
+                <input class="input1" type="text" autofocus autocomplete="off" name="MIT_REJA"
+                    placeholder="  Write your goal">
                 <button class="btn1" type="submit">+ Save to List</button>
-            </form>    
+            </form>
         </div>
         <ol class="list">
             <% goals.map(function(goal, index) { %>
                 <li class="list_item">
-                    <span class="goal_name"><%= goal.reja%></span>
+                    <span class="goal_name">
+                        <%= goal.reja%>
+                    </span>
                     <div class="inner_form">
-                        <button class="editMe_btn3" 
-                                data-id = "<%=goal._id%>"
-                                type="button">Edit</button>
-                        
-                        <button class="deleteMe_btn2" 
-                                data-id = "<%=goal._id%>"
-                                type="submit">Delete</button>
+                        <button class="editMe_btn3" data-id="<%=goal._id%>" type="button">Edit</button>
+
+                        <button class="deleteMe_btn2" data-id="<%=goal._id%>" type="submit">Delete</button>
                     </div>
-                </li> 
-            <% }) %>
+                </li>
+                <% }) %>
         </ol>
         <div class="clear_all-container">
             <button class="clear_all5" type="button">Delete All</button>
         </div>
 
-        
- 
+
+
     </div>
     <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
     <script src="/browser.js"></script>

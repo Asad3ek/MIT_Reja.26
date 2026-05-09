@@ -1,5 +1,36 @@
 //============M=====================I========================T================TASK=========E====
+function findDoublers(a) {
+    let obj = {};
+    for (let i = 0; i < a.length; i++) {
+       let word = a[i];
+        if (obj[word]) {
+            return true
+        }
+        obj[word] = true;
+    } 
+        return false
+}
 
+result1 = findDoublers("Success_Story"); 
+console.log("NATIJA1",result1);
+
+result2 = findDoublers("abcdefghjklmnopuv"); 
+console.log("NATIJA2:", result2);
+
+
+
+
+
+
+// TASK F
+
+// Yagona string argumentga ega findDoublers nomli function tuzing. Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa true yokida false natija qaytarsin.
+
+// Masalan: findDoublers("hello") return true
+
+
+//============M=====================I========================T================TASK=========E====
+/*
 function wordReverse(word) {
     console.log("Original Text:", word);
     console.log("=======================================")
@@ -15,7 +46,7 @@ console.log("=======================================")
 //test 2
 const result2 =  wordReverse ("Mehanizatsiyalashtirilmaganligidandir");
 console.log("RESULT_2:", result2);
-
+*/
 /*
 TASK E
 
@@ -39,7 +70,7 @@ function contentChecker(a, b) {
     if(parametr1.length !== parametr2.length && parametr1 !== parametr2) {
         console.log("Ikkita paramaetr harflar miqdori teng emas")
         return false;
-    } 
+    }
 
 }
 
@@ -52,7 +83,7 @@ console.log("NATIJ2:", result2);
 
 // TASK D
 
-// Ikkita parametra ega function tuzing, va functioning berilgan birinchi va ikkinchi 
+// Ikkita parametra ega function tuzing, va functioning berilgan birinchi va ikkinchi
 // parametr qiymatlari o'zaro to'liq mos kelsa true qiymat qaytarsin.
 
 // Masalan: checkContent("mitgroup", "gmtiprou") return true
@@ -117,7 +148,7 @@ class Market {
         console.log(`Lagman: ${this.stock['Lagman']} Kg`);
 
         }, 4000)
-    }   
+    }
 }
 
 const myMarket = new Market("Walmart", {
@@ -136,13 +167,13 @@ myMarket.receiveProduct1(4);
 /*
 class Shop {
     constructor(name, Bread, CocaCola, Meat){
-        this.name = name; 
+        this.name = name;
         this.Bread = Bread;
         this.CocaCola = CocaCola;
         this.Meat = Meat;
     }
 
-    //methodes 
+    //methodes
     currentStock() {
         console.log('TIME:', moment().format('HH:mm:ss DD.MM.YYYY'));
         console.log(`Current ${this.name} Stock:`);
@@ -164,7 +195,7 @@ console.log("=======================================================");
         } else {
             console.log(err, `Sorry! We do not have enought amount product! Current Stock: ${this.Bread} Bread`)
         }
-        
+
             setTimeout(() => {
                 console.log("=======================================================");
             }, 2000)
@@ -198,9 +229,9 @@ console.log("=======================================================");
 const myShop = new Shop('Walmart', 7, 11, 9);
 
 
-    
 
-//call 
+
+//call
 myShop.currentStock();
 myShop.sellProduct('Sunaya', 3);
 myShop.receiveProduct(6);
@@ -308,7 +339,7 @@ function countLetter(letter, word) {
     } else {
         console.log(`you inserted ${number} and it is odd`)
         }
-    
+
     }
  evenOrOdd(7);
 
@@ -328,10 +359,10 @@ function countLetter(letter, word) {
 
 //console.log("aadi family clothing shop");
 /*
-const check = [ 
+const check = [
     "Good shoes improve your whole look. To make more quality your look with aadi Please go Men's clothes page >>", //men
     "Use neutral colors for a clean look. To feel more confident PLease visit aadi woman's page >>", //woman
-    "Choose basic colors like black, white, and blue. Please visit Boy's page >>", // Boys 
+    "Choose basic colors like black, white, and blue. Please visit Boy's page >>", // Boys
     "Wear bright and fun colors. Please visit Girl's page >>"  //Girls
 ]
 //define
