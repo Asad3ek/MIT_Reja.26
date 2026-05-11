@@ -1,4 +1,33 @@
+//============M=====================I========================T================TASK=========G====
+ function getHighestIndex(numbers = [20,45,22,11,101,4,9]) {
+    let max = numbers[0];
+    for( let i = 0; i < numbers.length; i++) {
+        let current = numbers[i];
+        if(current > max) {
+            max = current
+            maxIndex = i;
+        } 
+        
+    }
+    return maxIndex;
+}
+
+
+
+result3 = getHighestIndex()
+console.log("Highes Number Index is:", result3);
+
+/* 
+TASK G
+
+Yagona parametrga ega function tuzing. Array tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
+
+Masalan: getHighestIndex([5, 21, 12, 21, 8]) return 1
+*/
+
+
 //============M=====================I========================T================TASK=========E====
+/*
 function findDoublers(a) {
     let obj = {};
     for (let i = 0; i < a.length; i++) {
@@ -17,7 +46,7 @@ console.log("NATIJA1",result1);
 result2 = findDoublers("abcdefghjklmnopuv"); 
 console.log("NATIJA2:", result2);
 
-
+*/
 
 
 
