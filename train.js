@@ -1,4 +1,38 @@
+//============M=====================I========================T================TASK=========H ====
+function getPositive(num = [1,52,-56,8,2]) {
+  let array = [];
+  
+  for(let i = 0; i < num.length; i++) {
+    let integ = num[i];
+    if(integ >= 0) {
+      array.push(integ)
+      
+    }
+    
+  }
+  return array.join("")
+}
+
+result = getPositive();
+console.log(result)
+
+//===================================================
+
+function getPositive2(nums = [1,52,-56,8,2]) { 
+return nums.filter(num => num > 0).join("")
+}
+
+
+const result2 = getPositive();
+console.log(result2)
+
+
+
+
+
 //============M=====================I========================T================TASK=========G====
+
+/*
  function getHighestIndex(numbers = [20,45,22,11,101,4,9]) {
     let max = numbers[0];
     for( let i = 0; i < numbers.length; i++) {
@@ -16,7 +50,7 @@
 
 result3 = getHighestIndex()
 console.log("Highes Number Index is:", result3);
-
+*/
 /* 
 TASK G
 
