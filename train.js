@@ -1,4 +1,29 @@
-//============M=====================I========================T================TASK=========H ====
+//============M=====================I========================T================TASK=========I====
+function majorityElement(arr) {
+    let maxElement = 0;
+    let result = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        let count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                count++;
+            }
+        }
+        if (count > maxElement) {
+            maxElement = count;
+            result = arr[i];
+        }
+    }
+
+    return result;
+}
+
+const arr1 = [3, 5, 7, 1, 3, 9, 9, 7, 4, 7, 7]
+console.log(majorityElement(arr1));
+
+
+//M=====================I========================T================TASK=========H ====
+/*
 function getPositive(num = [1,52,-56,8,2]) {
   let array = [];
   
@@ -16,6 +41,7 @@ function getPositive(num = [1,52,-56,8,2]) {
 result = getPositive();
 console.log(result)
 
+
 //===================================================
 
 function getPositive2(nums = [1,52,-56,8,2]) { 
@@ -26,8 +52,7 @@ return nums.filter(num => num > 0).join("")
 const result2 = getPositive();
 console.log(result2)
 
-
-
+*/
 
 
 //============M=====================I========================T================TASK=========G====
