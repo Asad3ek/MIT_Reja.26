@@ -6,24 +6,24 @@ let db;
 const connectionString = "mongodb+srv://Anthony_MIT:3lBJRwcHWLsAC41R@cluster0.1shlfmo.mongodb.net/MIT_REJA";
 
 mongodb.connect(connectionString, {
-    useNewUrlParser: true, 
+    useNewUrlParser: true,
     useUnifiedTopology: true,
 }, (err, client) => {
-    if(err){
+    if (err) {
         console.log("ERROR: Connection problem on MongoDB")
-    } else{
-        
+    } else {
+
         console.log("Successfully connected to MongoDB")
         module.exports = client;
-        
+
         const app = require("./app");
         const server = http.createServer(app);
         let PORT = 3014;
         server.listen(PORT, () => {
-        console.log(
-        `The Server is running  successfully on port: ${PORT}, http://localhost:${PORT}`
-        );
-        }); 
+            console.log(
+                `The Server is running  successfully on port: ${PORT}, http://localhost:${PORT}`
+            );
+        });
     }
 })
 

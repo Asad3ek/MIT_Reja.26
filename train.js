@@ -1,39 +1,158 @@
-//============M=====================I========================T================TASK=========I====
-function majorityElement(arr) {
-    let maxElement = 0;
-    let result = arr[0];
-    for (let i = 0; i < arr.length; i++) {
-        let count = 0;
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[i] === arr[j]) {
-                count++;
-            }
-        }
-        if (count > maxElement) {
-            maxElement = count;
-            result = arr[i];
+//============M=====================I========================T================TASK=========K====
+console.log("========$$========$$========$$==")
+console.log("Birinchi usul: =>")
+
+function countVowels2(string) {
+    const vowels = "aeoiu";
+    let vowelCounter = 0;
+    for (const letter of string.toLowerCase()) {
+        if (vowels.includes(letter)) {
+            vowelCounter++
+
         }
     }
-
-    return result;
+    return vowelCounter
 }
 
-const arr1 = [3, 5, 7, 1, 3, 9, 9, 7, 4, 7, 7]
-console.log(majorityElement(arr1));
+countedVowels = countVowels2("Pursuing senior-level engineering skills")
+console.log("countedVowels: ", countedVowels)
+
+console.log("========$$========$$========$$==")
+
+console.log("Ikkinchi usul: => ")
+
+function countVowels(string) {
+    let vowelCounter = 0;
+    const vowels = "aeoiu";
+    for (let i = 0; i < string.length; i++) {
+        let letter = string[i].toLowerCase()
+
+        for (let j = 0; j < vowels.length; j++) {
+            let vowel = vowels[j]
+            if (letter === vowel) {
+                vowelCounter++
+            }
+        }
+    }
+    return vowelCounter
+}
+
+totalVowels = countVowels("Pursuing senior-level engineering skills")
+console.log("totalVowels: ", totalVowels)
+console.log("========$$========$$========$$==")
+
+
+/*
+TASK K
+
+Berilayotgan parametr tarkibida nechta unli harf bor ekanligini aniqlovchi function tuzing.
+
+Masalan: countVowels("string") return 1
+ */
+
+
+
+//============M=====================I========================T================TASK=========J====
+/*
+function findLongestWord(string) {
+    new_string = string.split(" ")
+    let maxElement = " "
+    for (let i = 0; i < new_string.length; i++) {
+        element = new_string[i]
+        if (element.length > maxElement.length) {
+            maxElement = element
+        }
+
+    }
+    return maxElement
+
+}
+
+result = findLongestWord("I came from Uzbekistan!")
+console.log("LongestWords: ", result)
+
+result2 = findLongestWord("Spend most of your time on self-improvement that you no have time to critisize others!")
+console.log("LongestWords_2: ", result2)
+*/
+
+/*
+TASK J
+
+String ichidagi eng uzun so'zni qaytarsin.
+
+Masalan: findLongestWord("I came from Uzbekistan!") return "Uzbekistan!"
+*/
+
+
+
+
+//============M=====================I========================T================TASK=========I====
+/*
+function majorityElement(array) {
+    let mostRepeated = 0
+    let finalResult = array[0]
+    for (let i = 0; i < array.length; i++) {
+        let counter = 0
+        for (let j = 0; j < array.length; j++) {
+            if (array[i] === array[j]) {
+                counter++
+            }
+        }
+        if (counter > mostRepeated) {
+            mostRepeated = counter
+            finalResult = array[i]
+        }
+    }
+    return finalResult
+}
+
+result3 = majorityElement([2, 4, 2, 7, 5, 3, 2, 4, 2])
+console.log("return: ", result3)
+
+// Second way of solving algorithm
+function majorityElement2(array) {
+    let number_obj = {}
+    let mostRepeated = 0;
+    let finalResult = 0
+    for (let i = 0; i < array.length; i++) {
+        let ele = array[i]
+        if (number_obj[ele]) {
+            number_obj[ele]++
+        } else {
+            number_obj[ele] = 1
+        }
+        if (number_obj[ele] > mostRepeated) {
+            mostRepeated = number_obj[ele];
+            finalResult = ele
+        }
+
+    }
+    return finalResult
+}
+
+result4 = majorityElement2([7, 4, 2, 7, 5, 7, 2, 4, 2])
+console.log("return4: ", result4)
+*/
+
+// TASK I
+
+// Array ichida eng ko'p takrorlangan raqamni topib qaytarsin.
+
+// Masalan: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]) return 4
 
 
 //M=====================I========================T================TASK=========H ====
 /*
 function getPositive(num = [1,52,-56,8,2]) {
   let array = [];
-  
+
   for(let i = 0; i < num.length; i++) {
     let integ = num[i];
     if(integ >= 0) {
       array.push(integ)
-      
+
     }
-    
+
   }
   return array.join("")
 }
@@ -44,7 +163,7 @@ console.log(result)
 
 //===================================================
 
-function getPositive2(nums = [1,52,-56,8,2]) { 
+function getPositive2(nums = [1,52,-56,8,2]) {
 return nums.filter(num => num > 0).join("")
 }
 
@@ -65,8 +184,8 @@ console.log(result2)
         if(current > max) {
             max = current
             maxIndex = i;
-        } 
-        
+        }
+
     }
     return maxIndex;
 }
@@ -76,7 +195,7 @@ console.log(result2)
 result3 = getHighestIndex()
 console.log("Highes Number Index is:", result3);
 */
-/* 
+/*
 TASK G
 
 Yagona parametrga ega function tuzing. Array tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
@@ -95,14 +214,14 @@ function findDoublers(a) {
             return true
         }
         obj[word] = true;
-    } 
+    }
         return false
 }
 
-result1 = findDoublers("Success_Story"); 
+result1 = findDoublers("Success_Story");
 console.log("NATIJA1",result1);
 
-result2 = findDoublers("abcdefghjklmnopuv"); 
+result2 = findDoublers("abcdefghjklmnopuv");
 console.log("NATIJA2:", result2);
 
 */

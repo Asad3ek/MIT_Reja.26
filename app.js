@@ -1,4 +1,4 @@
-console.log("Starting Web Project");
+ console.log("Starting Web Project");
 
 //requiring needed external packages
 const express = require("express");
